@@ -86,3 +86,30 @@ body {
 .proceed-to-checkout:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 1740px) {
+  .home-left-bot-item {
+    width: 280px;
+    height: 220px;
+  }
+}
+@media screen and (max-width: 1660px) {
+  .home-left-bot-item {
+    width: 230px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .home-left-bot-item {
+    width: 180px;
+    height: 150px;
+    margin: 30px;
+  }
+}
+@media screen and (max-width: 1120px) {
+  .home-left-bot-item {
+    width: 180px;
+    height: 150px;
+    margin: 20px;
+  }
+}
