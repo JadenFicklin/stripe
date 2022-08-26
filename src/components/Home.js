@@ -16,60 +16,21 @@ function Home() {
         <div className="home-left">
           <div className="home-left-top">Jaden's Shoes</div>
           <div className="home-left-bot">
-            <div className="home-left-bot-item one">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
+            {db.map((db) => (
+              <div>
+                <div className="home-left-bot-item">
+                  <div
+                    className="img-top"
+                    style={{ backgroundImage: `url(${db.imageOne})` }}
+                  >
+                    <div className="img-add-to-cart">+</div>
+                  </div>
+                  <div className="img-bot">
+                    {db.gender} {db.id}
+                  </div>
+                </div>
               </div>
-              <div className="img-bot"></div>
-            </div>
-            <div className="home-left-bot-item two">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
-              </div>
-              <div className="img-bot"></div>
-            </div>
-            <div className="home-left-bot-item three">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
-              </div>
-              <div className="img-bot"></div>
-            </div>
-            <div className="home-left-bot-item four">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
-              </div>
-              <div className="img-bot"></div>
-            </div>
-            <div className="home-left-bot-item five">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
-              </div>
-              <div className="img-bot"></div>
-            </div>
-            <div className="home-left-bot-item six">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
-              </div>
-              <div className="img-bot"></div>
-            </div>
-            <div className="home-left-bot-item seven">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
-              </div>
-              <div className="img-bot"></div>
-            </div>
-            <div className="home-left-bot-item eight">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
-              </div>
-              <div className="img-bot"></div>
-            </div>
-            <div className="home-left-bot-item nine">
-              <div className="img-top">
-                <div className="img-add-to-cart">+</div>
-              </div>
-              <div className="img-bot"></div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="home-right" style={checkoutStyling}>
