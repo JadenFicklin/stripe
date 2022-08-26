@@ -3,13 +3,20 @@ import db from "../constants/db";
 
 function Home() {
   const [checkout, setCheckout] = useState(false);
+  const [catchId, setCatchId] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const checkoutStyling = {
     backgroundColor: checkout ? "lightgray" : "lightgray",
     width: checkout ? "100%" : "30%",
   };
 
-  console.log(db);
+  const addToCart = (props) => {
+    setCatchId([...catchId, props]);
+    setTotalPrice(5);
+  };
+  console.log(catchId);
+
   return (
     <>
       <div className="home-outer">
@@ -17,16 +24,25 @@ function Home() {
           <div className="home-left-top">Jaden's Shoes</div>
           <div className="home-left-bot">
             {db.map((db) => (
-              <div>
+              <div key={db.id}>
                 <div className="home-left-bot-item">
                   <div
                     className="img-top"
                     style={{ backgroundImage: `url(${db.imageOne})` }}
                   >
-                    <div className="img-add-to-cart">+</div>
+                    <div
+                      className="img-add-to-cart"
+                      onClick={() => addToCart(db.price)}
+                    >
+                      +
+                    </div>
                   </div>
                   <div className="img-bot">
-                    {db.gender} {db.id}
+                    <div className="img-bot-left">
+                      <div className="img-bot-left-top">{db.name}</div>
+                      <div className="img-bot-left-bot">{db.type}</div>
+                    </div>
+                    <div className="img-bot-right">${db.price}</div>
                   </div>
                 </div>
               </div>
@@ -34,10 +50,14 @@ function Home() {
           </div>
         </div>
         <div className="home-right" style={checkoutStyling}>
-          {checkout ? null : <div className="home-right-top"></div>}
+          {checkout ? null : <div className="home-right-top">{totalPrice}</div>}
           {checkout ? null : (
             <div className="home-right-middle">
-              <div className="home-right-middle-item"></div>
+              <div className="home-right-middle-item">
+                {catchId.map((catchId) => (
+                  <div className="catch-id-box">{catchId}</div>
+                ))}
+              </div>
             </div>
           )}
           {checkout ? null : (
