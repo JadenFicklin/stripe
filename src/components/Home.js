@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import db from "../constants/db";
 
 function Home() {
+  const [checkout, setCheckout] = useState(false);
+
+  const checkoutStyling = {
+    backgroundColor: checkout ? "rgb(77, 77, 77)" : "rgb(104, 104, 104)",
+    width: checkout ? "100%" : "30%",
+  };
+
+  console.log(db);
   return (
     <>
       <div className="home-outer">
@@ -63,13 +72,18 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="home-right">
+        <div className="home-right" style={checkoutStyling}>
           <div className="home-right-top"></div>
           <div className="home-right-middle">
             <div className="home-right-middle-item"></div>
           </div>
           <div className="home-right-bottom">
-            <div className="proceed-to-checkout"> Proceed to checkout </div>
+            <button
+              className="proceed-to-checkout"
+              onClick={() => setCheckout(!checkout)}
+            >
+              Proceed to checkout
+            </button>
           </div>
         </div>
       </div>
