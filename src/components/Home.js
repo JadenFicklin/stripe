@@ -5,7 +5,7 @@ function Home() {
   const [checkout, setCheckout] = useState(false);
 
   const checkoutStyling = {
-    backgroundColor: checkout ? "rgb(77, 77, 77)" : "rgb(104, 104, 104)",
+    backgroundColor: checkout ? "lightgray" : "lightgray",
     width: checkout ? "100%" : "30%",
   };
 
@@ -73,18 +73,42 @@ function Home() {
           </div>
         </div>
         <div className="home-right" style={checkoutStyling}>
-          <div className="home-right-top"></div>
-          <div className="home-right-middle">
-            <div className="home-right-middle-item"></div>
-          </div>
-          <div className="home-right-bottom">
-            <button
-              className="proceed-to-checkout"
-              onClick={() => setCheckout(!checkout)}
-            >
-              Proceed to checkout
-            </button>
-          </div>
+          {checkout ? null : <div className="home-right-top"></div>}
+          {checkout ? null : (
+            <div className="home-right-middle">
+              <div className="home-right-middle-item"></div>
+            </div>
+          )}
+          {checkout ? null : (
+            <div className="home-right-bottom">
+              <button
+                className="proceed-to-checkout"
+                onClick={() => setCheckout(!checkout)}
+              >
+                Proceed to checkout
+              </button>
+            </div>
+          )}
+          {checkout ? (
+            <div className="checkout-outer">
+              <div className="checkout-left">
+                <div className="checkout-left-inner">
+                  <div className="checkout-left-inner-top">
+                    <button onClick={() => setCheckout(!checkout)}>back</button>
+                  </div>
+                  <div className="checkout-left-inner-middle"></div>
+                  <div className="checkout-left-inner-bottom"></div>
+                </div>
+              </div>
+              <div className="checkout-right">
+                <div className="checkout-right-inner">
+                  <div className="checkout-right-inner-top"></div>
+                  <div className="checkout-right-inner-middle"></div>
+                  <div className="checkout-right-inner-bottom"></div>
+                </div>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </>
