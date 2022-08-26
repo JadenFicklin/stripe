@@ -11,15 +11,22 @@ function Home() {
     width: checkout ? "100%" : "30%",
   };
 
-  const addToCart = (props, props2, props3, props4) => {
+  const addToCart = (props, props2, props3, props4, props5) => {
     setCatchId([
       ...catchId,
-      { price: props, name: props2, type: props3, id: props4 },
+      {
+        price: props,
+        name: props2,
+        type: props3,
+        id: props4,
+        imageOne: props5,
+      },
     ]);
     setTotalPrice(5);
   };
   const handleDelete = (props) => {
-    var oldCatchId = catchId;
+    // console.log(props);
+    var oldCatchId = [...catchId];
     console.log(oldCatchId);
 
     var removeIndex = oldCatchId.map((item) => item.id).indexOf(props);
@@ -45,7 +52,13 @@ function Home() {
                     <div
                       className="img-add-to-cart"
                       onClick={() =>
-                        addToCart(db.price, db.name, db.type, db.id)
+                        addToCart(
+                          db.price,
+                          db.name,
+                          db.type,
+                          db.id,
+                          db.imageOne
+                        )
                       }
                     >
                       +
@@ -70,10 +83,18 @@ function Home() {
               <div className="home-right-middle-item">
                 {catchId.map((catchId) => (
                   <div className="catch-id-box">
-                    <div className="catch-id-box-id">{catchId.id}</div>
-                    <div className="catch-id-box-price">{catchId.price}</div>
-                    <div className="catch-id-box-name">{catchId.name}</div>
-                    <div className="catch-id-box-type">{catchId.type}</div>
+                    <div className="catch-id-box-left">
+                      <div
+                        className="catch-id-box-left-img"
+                        style={{ backgroundImage: `url(${catchId.imageOne})` }}
+                      ></div>
+                    </div>
+                    <div className="catch-id-box-right">
+                      <div className="catch-id-box-price">{catchId.price}</div>
+                      <div className="catch-id-box-name">{catchId.name}</div>
+                      <div className="catch-id-box-type">{catchId.type}</div>
+                    </div>
+
                     <div
                       className="delete-item"
                       onClick={() => handleDelete(catchId.id)}
