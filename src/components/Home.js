@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import db from "../constants/db";
 
 function Home() {
@@ -22,7 +22,6 @@ function Home() {
         imageOne: props5,
       },
     ]);
-    setTotalPrice(5);
   };
   const handleDelete = (props) => {
     // console.log(props);
@@ -35,6 +34,17 @@ function Home() {
 
     setCatchId(oldCatchId);
   };
+
+  useEffect(() => {
+    let _catchId = [...catchId];
+    let prices = [];
+    for (let i = 0; i < _catchId.length; i++) {
+      prices.push(_catchId[i].price);
+    }
+    console.log(prices);
+    const sum = prices.reduce((partialSum, a) => partialSum + a, 0);
+    setTotalPrice(sum.toFixed(2));
+  }, [addToCart, handleDelete]);
 
   return (
     <>
@@ -77,7 +87,9 @@ function Home() {
           </div>
         </div>
         <div className="home-right" style={checkoutStyling}>
-          {checkout ? null : <div className="home-right-top">{totalPrice}</div>}
+          {checkout ? null : (
+            <div className="home-right-top">$ {totalPrice}</div>
+          )}
           {checkout ? null : (
             <div className="home-right-middle">
               <div className="home-right-middle-item">
