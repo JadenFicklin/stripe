@@ -134,16 +134,53 @@ body {
   justify-content: center;
 }
 .home-right-middle-item {
-  width: 90%;
+  width: 100%;
   height: 80%;
   background-color: white;
   margin-top: 30px;
+  overflow: auto;
 }
 .catch-id-box {
-  width: 50px;
-  height: 50px;
+  width: 90%;
+  height: 70px;
   border: 1px solid black;
   margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  padding-left: 15px;
+}
+.catch-id-box-price,
+.catch-id-box-name,
+.catch-id-box-type,
+.catch-id-box-id {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+}
+.catch-id-box-price {
+  font-weight: bold;
+}
+.delete-item {
+  position: relative;
+  left: 345px;
+  top: -73px;
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.delete-item:hover {
+  background-color: orange;
+  cursor: pointer;
 }
 .home-right-bottom {
   width: 100%;
