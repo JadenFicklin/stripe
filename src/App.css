@@ -244,25 +244,100 @@ body {
 .checkout-left-inner {
   width: 500px;
   height: 75%;
-  background-color: darkgray;
   margin-left: 300px;
   margin-top: 100px;
 }
 .checkout-left-inner-top {
   width: 100%;
   height: 10%;
-  outline: 1px solid black;
+}
+.back-button {
+  width: 40px;
+  height: 35px;
+  background-color: lightgray;
+  border: none;
+}
+.back-button:hover {
+  cursor: pointer;
+}
+.back-button-icon {
+  width: 100%;
+  height: 100%;
+  color: rgb(146, 146, 146);
 }
 .checkout-left-inner-middle {
   width: 100%;
+  height: 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.total-price-header {
+  width: 100%;
   height: 20%;
-  outline: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+.total-price-amount {
+  width: 100%;
+  height: 80%;
+  font-size: 46px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 .checkout-left-inner-bottom {
   width: 100%;
   height: 70%;
-  outline: 1px solid black;
+  overflow: auto;
 }
+
+/* checkout left inner bottom items */
+.checkout-id-box {
+  width: 90%;
+  height: 70px;
+  margin: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  margin-left: -40px;
+}
+.checkout-id-box-left {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkout-id-box-left-img {
+  width: 60%;
+  height: 90%;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: none;
+}
+.checkout-id-box-right {
+  width: 50%;
+  height: 100%;
+}
+.checkout-right-price {
+  width: 20%;
+  height: 100%;
+}
+.checkout-id-box-name,
+.checkout-id-box-type,
+.checkout-id-box-id {
+  width: 100%;
+  height: 35%;
+  display: flex;
+}
+.checkout-id-box-type {
+  color: rgb(134, 134, 134);
+}
+.checkout-id-box-price {
+  font-weight: bold;
+}
+/* end  */
+
 .checkout-right {
   background-color: white;
 }

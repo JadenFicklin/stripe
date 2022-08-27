@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import db from "../constants/db";
+import { BsArrowLeft } from "react-icons/bs";
 
 function Home() {
   const [checkout, setCheckout] = useState(false);
@@ -133,10 +134,46 @@ function Home() {
               <div className="checkout-left">
                 <div className="checkout-left-inner">
                   <div className="checkout-left-inner-top">
-                    <button onClick={() => setCheckout(!checkout)}>back</button>
+                    <button
+                      onClick={() => setCheckout(!checkout)}
+                      className="back-button"
+                    >
+                      <BsArrowLeft className="back-button-icon" />
+                    </button>
                   </div>
-                  <div className="checkout-left-inner-middle"></div>
-                  <div className="checkout-left-inner-bottom"></div>
+                  <div className="checkout-left-inner-middle">
+                    <div className="total-price-header">Pay Jadens Shoes</div>
+                    <div className="total-price-amount">$ {totalPrice}</div>
+                  </div>
+                  <div className="checkout-left-inner-bottom">
+                    {catchId.map((catchId) => (
+                      <div className="checkout-id-box">
+                        <div className="checkout-id-box-left">
+                          <div
+                            className="checkout-id-box-left-img"
+                            style={{
+                              backgroundImage: `url(${catchId.imageOne})`,
+                            }}
+                          ></div>
+                        </div>
+
+                        <div className="checkout-id-box-right">
+                          <div className="checkout-id-box-name">
+                            {catchId.name}
+                          </div>
+                          <div className="checkout-id-box-type">
+                            {catchId.type}
+                          </div>
+                        </div>
+
+                        <div className="checkout-right-price">
+                          <div className="checkout-id-box-price">
+                            {catchId.price}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               <div className="checkout-right">
