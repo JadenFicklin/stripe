@@ -276,6 +276,7 @@ body {
   height: 20%;
   display: flex;
   align-items: center;
+  color: rgb(73, 73, 73);
 }
 .total-price-amount {
   width: 100%;

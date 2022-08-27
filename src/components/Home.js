@@ -80,7 +80,7 @@ function Home() {
                       <div className="img-bot-left-top">{db.name}</div>
                       <div className="img-bot-left-bot">{db.type}</div>
                     </div>
-                    <div className="img-bot-right">${db.price}</div>
+                    <div className="img-bot-right">${db.price.toFixed(2)}</div>
                   </div>
                 </div>
               </div>
@@ -103,7 +103,9 @@ function Home() {
                       ></div>
                     </div>
                     <div className="catch-id-box-right">
-                      <div className="catch-id-box-price">{catchId.price}</div>
+                      <div className="catch-id-box-price">
+                        ${catchId.price.toFixed(2)}
+                      </div>
                       <div className="catch-id-box-name">{catchId.name}</div>
                       <div className="catch-id-box-type">{catchId.type}</div>
                     </div>
@@ -168,7 +170,7 @@ function Home() {
 
                         <div className="checkout-right-price">
                           <div className="checkout-id-box-price">
-                            {catchId.price}
+                            $ {catchId.price.toFixed(2)}
                           </div>
                         </div>
                       </div>
