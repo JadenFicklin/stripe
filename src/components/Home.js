@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import db from "../constants/db";
 import { BsArrowLeft } from "react-icons/bs";
+import StripeContainer from "../components/StripeContainer";
 
 function Home() {
   const [checkout, setCheckout] = useState(false);
@@ -180,8 +181,12 @@ function Home() {
               </div>
               <div className="checkout-right">
                 <div className="checkout-right-inner">
-                  <div className="checkout-right-inner-top"></div>
-                  <div className="checkout-right-inner-middle"></div>
+                  <div className="checkout-right-inner-top">
+                    Enter payment information below
+                  </div>
+                  <div className="checkout-right-inner-middle">
+                    <StripeContainer />
+                  </div>
                   <div className="checkout-right-inner-bottom"></div>
                 </div>
               </div>

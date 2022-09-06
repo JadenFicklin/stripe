@@ -68,8 +68,8 @@ export default function PaymentForm() {
       ) : (
         <div>
           <h2>
-            You just bought a sweet spatula congrats this is the best decision
-            of you're life
+            Your purchase was successful. Thank you for shopping with Jadens
+            Shoes
           </h2>
         </div>
       )}
