@@ -66,10 +66,10 @@ export default function PaymentForm() {
           <button>Pay</button>
         </form>
       ) : (
-        <div>
+        <div className="purchase-successful">
           <h2>
-            Your purchase was successful. Thank you for shopping with Jadens
-            Shoes
+            Your purchase was successful. <br></br>
+            <br></br> Thank you for shopping with us!
           </h2>
         </div>
       )}
